@@ -1,1 +1,100 @@
-aa
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Been Love</title>
+    <link rel="stylesheet" href="https://tongxuantrung.github.io/CSS/beenlove.css">
+</head>
+<body>
+     <!-- Bắt đầu phần hiển thị -->
+     &lt;body&gt;
+     <div id='wrapper'>
+         <h1>LOVE DAYS</h1>
+            <div id='clock-box'>
+                 <div id='clock'>
+                     <date>0 DAYS</date>
+                     <time>00:00:00</time>
+                 </div>
+             </div>
+             <div id='info'>
+                 <div class='one'>
+                     <img class='avt' src='https://i.imgur.com/jO1vqfc.jpg'/>
+                     <p>Diễm</p>
+                 </div>
+                 <div id='heart'>
+                     &#10084;<anni>...</anni>
+                 </div>
+                 <div class='two'>
+                     <img class='avt' src='https://i.imgur.com/9wtsIhA.jpg'/>
+                     <p>Trung</p>
+                 </div>
+             </div>
+             <div id='music'>
+                 <audio autoplay='' controls='' loop=''>Your browser does not support the audio element.</audio>
+             </div>
+         <footer>Thank you for your love 💋</footer>
+     </div>
+     <script type='text/javascript'>//<![CDATA[
+         // Thay đổi ngày bắt đầu đếm tại đây - cấu trúc => YYYY/MM/DD
+         const yourDate = new Date("2023-08-17T00:00:00"),
+         // Thay đổi bài hát tại đây
+         music = ['姻缘成茧'];
+         document.addEventListener('DOMContentLoaded', function() {
+             var rootTime = document.querySelector("time");
+             document.querySelector("anni").textContent = `${(yourDate.getDate()>9)?yourDate.getDate():"0"+yourDate.getDate()}-${(yourDate.getMonth()>8)?(yourDate.getMonth()+1):"0"+(yourDate.getMonth()+1)}-${yourDate.getFullYear()}`;
+             document.querySelector("date").textContent = Math.floor(Math.floor((new Date() - yourDate) / 1000) / 60 / 60 / 24) + " DAYS";
+             function olock() {
+                 var today = new Date(),
+                     hrs = (Math.floor(Math.floor((today - yourDate) / 1000) / 60 / 60)) % 24,
+                     min = (Math.floor(Math.floor((today - yourDate) / 1000) / 60)) % 60,
+                     sec = Math.floor((today - yourDate) / 1000) % 60;
+                 rootTime.textContent = `${(hrs>9)?hrs:"0"+hrs}:${(min>9)?min:"0"+min}:${(sec>9)?sec:"0"+sec}`;
+             }
+             olock();
+             var timer = setInterval(function() {
+                 olock()
+             }, 1000);
+             // Thay đổi link ramdom bài hát tại đây
+             document.querySelector("audio").setAttribute("src", `https://camtavietnam.github.io/music/${music[Math.floor(Math.random()*music.length)]}.mp3`);
+             document.getElementsByTagName("body")[0].insertAdjacentHTML(
+                 "beforeend",
+                 "<div id='mask'></div>"
+             );
+         }, false);
+     //]]></script>
+      <!--loading-->
+<link href='https://tongxuantrung.github.io/CSS/flyman-loading-pink.css' rel='stylesheet'/>
+<div class='loadd'>
+ <div class='body'>
+     <span/>
+     <span/>
+     <span/>
+     <span/>
+     <div class='base'>
+         <span/>
+         <div class='face'/>
+     </div>
+ </div>
+ <div class='longfazers'>
+     <span/>
+     <span/>
+     <span/>
+     <span/>
+ </div>
+</div>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'/>
+<script type='text/javascript'>
+ $(window).load(function () {
+     setTimeout(function () {
+         $(&quot;.loadd&quot;).fadeOut(&quot;slow&quot;);
+     }, 500)
+ });
+</script>
+     <b:if cond='data:displayname == &quot;Displaynone&quot;'><b:section id='leanhduc.pro.vn'/></b:if>
+ &lt;!--<head/>--&gt;
+ &lt;!--<body/>--&gt;
+ &lt;/body&gt;
+ <!-- Kết thúc phần hiển thị -->
+</body>
+</html>
